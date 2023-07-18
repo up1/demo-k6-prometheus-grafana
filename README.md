@@ -55,3 +55,9 @@ $export K6_INFLUXDB_TOKEN="5up3r-S3cr3t-auth-t0k3n"
 $export K6_INFLUXDB_ADDR="http://localhost:8086"
 $k6 run ./k6-script/demo.js -o xk6-influxdb
 ```
+
+or Run K6 script with Docker compose
+```
+$docker compose build k6
+$docker compose up k6 --remove-orphans
+```
