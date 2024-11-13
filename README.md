@@ -5,13 +5,7 @@
 
 ## Step to run
 
-1. Install and [build K6 + Prometheus remote write](https://grafana.com/docs/k6/latest/results-output/real-time/prometheus-remote-write/)
-* Go
-* Git
-```
-$go install go.k6.io/xk6/cmd/xk6@latest
-$xk6 build --with github.com/grafana/xk6-output-influxdb
-```
+1. Install and [build K6 + Prometheus remote write](https://grafana.com/docs/k6/latest/set-up/install-k6/)
 
 Run K6
 ```
