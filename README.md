@@ -1,11 +1,11 @@
 # Workshop performance testing with K6 (Distributed testing)
 * K6
-* InfluxDB 2
+* Prometheus
 * Grafana
 
 ## Step to run
 
-1. Install and [build K6 + InfluxDB 2](https://k6.io/docs/results-output/real-time/influxdb/)
+1. Install and [build K6 + Prometheus remote write](https://grafana.com/docs/k6/latest/results-output/real-time/prometheus-remote-write/)
 * Go
 * Git
 ```
@@ -16,10 +16,6 @@ $xk6 build --with github.com/grafana/xk6-output-influxdb
 Run K6
 ```
 $k6 version
-
-k6 v0.43.1 ((devel), go1.21rc2, darwin/arm64)
-Extensions:
-  github.com/grafana/xk6-output-influxdb v0.4.0, xk6-influxdb [output]
 ```
 
 Run script with K6
@@ -51,8 +47,8 @@ Run K6 script
 ```
 $export K6_PROMETHEUS_RW_SERVER_URL=http://localhost:9090/api/v1/write
 $export K6_PROMETHEUS_RW_TREND_AS_NATIVE_HISTOGRAM=true
-$export K6_OUT=xk6-prometheus-rw
-$k6 run ./k6-script/demo.js -o xk6-prometheus-rw
+$export K6_OUT=experimental-prometheus-rw
+$k6 run ./k6-script/demo.js -o experimental-prometheus-rw
 ```
 
 or Run K6 script with Docker compose
