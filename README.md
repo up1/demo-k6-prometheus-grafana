@@ -27,11 +27,11 @@ Run script with K6
 $k6 run ./k6-script/demo.js
 ```
 
-2. Run and Store result in InfluxDB 2
+2. Run and Store result in Prometheus and Grafana
 
-Start InfluxDB 2
+Start Prometheus
 ```
-$docker compose up -d influxdb
+$docker compose up -d prometheus
 $docker compose ps
 $docker compose logs --follow
 ```
@@ -45,15 +45,14 @@ $docker compose logs --follow
 
 Access to Grafana eith url = http://localhost:3000
 * user=admin
-*password=admin
+* password=admin
 
 Run K6 script
 ```
-$export K6_INFLUXDB_ORGANIZATION="influxdata-org"
-$export K6_INFLUXDB_BUCKET="k6_results"
-$export K6_INFLUXDB_TOKEN="5up3r-S3cr3t-auth-t0k3n"
-$export K6_INFLUXDB_ADDR="http://localhost:8086"
-$k6 run ./k6-script/demo.js -o xk6-influxdb
+$export K6_PROMETHEUS_RW_SERVER_URL=http://localhost:9090/api/v1/write
+$export K6_PROMETHEUS_RW_TREND_AS_NATIVE_HISTOGRAM=true
+$export K6_OUT=xk6-prometheus-rw
+$k6 run ./k6-script/demo.js -o xk6-prometheus-rw
 ```
 
 or Run K6 script with Docker compose

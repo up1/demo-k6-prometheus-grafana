@@ -1,15 +1,4 @@
-version: '3'
 services:
-  # influxdb:
-  #   image: influxdb
-  #   ports:
-  #    - "8086:8086"
-  #    - 25826:25826/udp
-  #   env_file:
-  #     - './influxdb/influx2.env'
-  #   networks:
-  #    - demo-network
-
   prometheus:
     image: prom/prometheus:v2.45.0
     command:
@@ -31,6 +20,8 @@ services:
       - './grafana/grafana.env'
     networks:
      - demo-network
+    depends_on:
+      - prometheus
   
   k6:
     build: ./k6-script
