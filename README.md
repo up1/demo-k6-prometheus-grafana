@@ -50,3 +50,8 @@ $k6 run ./k6-script/demo.js -o experimental-prometheus-rw
 $docker compose build k6
 $docker compose up k6 --remove-orphans
 ```
+
+### 4. Delete all
+```
+$docker compose down
+```
