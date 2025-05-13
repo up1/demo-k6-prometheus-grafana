@@ -1,14 +1,28 @@
 {
 	"info": {
-		"_postman_id": "da78539d-fc36-4ef7-8052-f6dbe0aeb53a",
+		"_postman_id": "8057c751-e835-4ad4-a4b5-97fcb7ea3f27",
 		"name": "demo",
 		"schema": "https://schema.getpostman.com/json/collection/v2.0.0/collection.json",
 		"_exporter_id": "1453931",
-		"_collection_link": "https://red-firefly-245852.postman.co/workspace/swpark2025~c8fef688-7eb7-4ebb-87f9-30360b649129/collection/1453931-da78539d-fc36-4ef7-8052-f6dbe0aeb53a?action=share&source=collection_link&creator=1453931"
+		"_collection_link": "https://red-firefly-245852.postman.co/workspace/scb-testing~bf0a9e3a-59e9-48d1-bfab-0952267c341a/collection/1453931-8057c751-e835-4ad4-a4b5-97fcb7ea3f27?action=share&source=collection_link&creator=1453931"
 	},
 	"item": [
 		{
 			"name": "Login",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Status code is 200\", function () {",
+							"    pm.response.to.have.status(200);",
+							"});"
+						],
+						"type": "text/javascript",
+						"packages": {}
+					}
+				}
+			],
 			"request": {
 				"auth": {
 					"type": "noauth"
@@ -30,6 +44,20 @@
 		},
 		{
 			"name": "Get user",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Status code is 200\", function () {",
+							"    pm.response.to.have.status(200);",
+							"});"
+						],
+						"type": "text/javascript",
+						"packages": {}
+					}
+				}
+			],
 			"request": {
 				"auth": {
 					"type": "noauth"
