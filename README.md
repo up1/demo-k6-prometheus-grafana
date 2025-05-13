@@ -1,11 +1,12 @@
 # Workshop performance testing with K6 (Distributed testing)
-* K6
-* Prometheus
-* Grafana
+*[Grafana K6](https://grafana.com/docs/k6/latest/)
+* [Prometheus](https://prometheus.io/)
+* [Grafana](https://grafana.com/oss/grafana/)
 
 ## Step to run
 
 ### 1. Start API for testing
+* Target system
 
 ```
 $docker compose build api
