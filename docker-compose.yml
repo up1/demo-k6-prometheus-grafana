@@ -1,4 +1,14 @@
 services:
+  api:
+    image: demo-api:1.0
+    build:
+      context: ./api
+      dockerfile: Dockerfile
+    ports:
+      - "8080:8080"
+    networks:
+     - demo-network
+     
   prometheus:
     image: prom/prometheus:v2.45.0
     command:
